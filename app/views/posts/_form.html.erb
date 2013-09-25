@@ -1,4 +1,4 @@
-<%= @book.id %>
+<%#= @book.id %>
 <%= form_for(@post, url: "/books/#{@book.id}/posts") do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">

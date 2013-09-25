@@ -2,7 +2,9 @@
 
 <%= render 'form' %>
 
-
+<%#works show%>
 <%= link_to 'Show', "/books/#{@book.id}/posts/#{@post.id}" %> 
+
+<%#link_to 'Show', @post %> |
 <%= link_to 'Back', book_post_path(@book, @post) %>
 

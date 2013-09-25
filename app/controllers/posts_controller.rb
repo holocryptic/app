@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-
+    @book = Book.find(params[:book_id])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-
+    @book = Book.find(params[:book_id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
@@ -60,10 +60,10 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
-
+    @book = Book.find(params[:book_id])
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to "/books/#{@book.id}/posts/#{@post.id}", notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -79,7 +79,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to "/books/#{@book.id}/posts/" }
       format.json { head :no_content }
     end
   end
