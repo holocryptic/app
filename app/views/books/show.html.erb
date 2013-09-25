@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Author:</b>
+  <%= @book.author %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @book.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
+
+
+<p><br>
+  <b>Posts:</b> 
+  <% @book.posts.each do |post| %>
+  Post: <%= link_to post.name, post %> <br>
+  <% end %>
+
+  <br> 
+  <%= link_to "Create new post", new_book_post_path(@book) %> 
+</p> 

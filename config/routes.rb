@@ -1,5 +1,22 @@
 App::Application.routes.draw do
-  root to: "home#index"
+ # resources :comments
+ # resources :posts
+ # resources :books
+  # root to: "home#index"
+
+#Posts::Application.routes.draw do
+root to: "home#index"
+#resources :posts
+
+#resources :books  
+
+resources :books do  
+	resources :posts do
+ 		resources :comments
+	end
+end
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
