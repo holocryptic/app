@@ -59,9 +59,10 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
-    @post = Post.find(params[:id])
     @book = Book.find(params[:book_id])
-    respond_to do |format|
+    @post = Post.find(params[:id])
+      
+     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to "/books/#{@book.id}/posts/#{@post.id}", notice: 'Post was successfully updated.' }
         format.json { head :no_content }
@@ -75,10 +76,11 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    @book = Book.find(params[:book_id])
     @post = Post.find(params[:id])
     @post.destroy
-
-    respond_to do |format|
+   
+   respond_to do |format|
       format.html { redirect_to "/books/#{@book.id}/posts/" }
       format.json { head :no_content }
     end
