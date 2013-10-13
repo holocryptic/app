@@ -10,9 +10,7 @@
 
 <%= yield %>
 
-html = render_to_string(:action => "HOME#INDEX.html")
-kit = PDFKit.new(html)
-send_data(kit.to_pdf, :filename => 'report.pdf', :type => 'application/pdf', :disposition => 'inline')
+<%= stylesheet_link_tag 'application', :media => "all" %>
 
 </body>
 </html>
