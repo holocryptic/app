@@ -15,12 +15,17 @@
 <%= link_to 'Back', books_path %>
 
 
+
 <p><br>
   <b>Posts:</b> 
   <% @book.posts.each do |post| %>
-  Post: <%= link_to post.name, post %> <br>
-  <% end %>
+  Post name: <%= link_to post.name, "/books/#{@book.id}/posts/#{post.id}" %> <br>
+  Post text: <%= link_to post.body, "/books/#{@book.id}/posts/#{post.id}" %> <br>
+    <% end %>
 
-  <br> 
+
+
+<br>
   <%= link_to "Create new post", new_book_post_path(@book) %> 
-</p> 
+  <%#= render "posts/form" %>
+

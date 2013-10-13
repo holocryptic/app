@@ -13,8 +13,10 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+     @posts=Post.all
     @book = Book.find(params[:id])
-
+    #lacked of this line
+    #@post = Book.posts.build
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @book }

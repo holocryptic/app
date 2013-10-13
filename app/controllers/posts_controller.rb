@@ -41,8 +41,11 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    #@posts=Post.all
     @book = Book.find(params[:book_id])
-    @post = Post.new(params[:post])
+    #@post = Post.new(params[:post])
+    @post = @book.posts.build(params[:post])
+    #@comment.author = current_user
 
     respond_to do |format|
       if @post.save
@@ -65,6 +68,7 @@ class PostsController < ApplicationController
      respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to "/books/#{@book.id}/posts/#{@post.id}", notice: 'Post was successfully updated.' }
+        #format.html { redirect_to books_post_path(@book, @post), notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
