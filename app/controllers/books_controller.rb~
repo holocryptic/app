@@ -13,6 +13,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+     @posts=Post.all
     @book = Book.find(params[:id])
     #lacked of this line
     #@post = Book.posts.build
@@ -36,6 +37,7 @@ class BooksController < ApplicationController
   # GET /books/1/edit
   def edit
     @book = Book.find(params[:id])
+    @post= Post.find(params[:id])
   end
 
   # POST /books

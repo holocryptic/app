@@ -85,7 +85,8 @@ class PostsController < ApplicationController
     @post.destroy
    
    respond_to do |format|
-      format.html { redirect_to "/books/#{@book.id}/posts/" }
+     # format.html { redirect_to "/books/#{@book.id}/posts/" }
+      format.html { redirect_to "/books/#{@book.id}" }
       format.json { head :no_content }
     end
   end

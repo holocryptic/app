@@ -1,31 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Author:</b>
-  <%= @book.author %>
-</p>
+<br> Автор: 
+ <div id= mn> <%= @book.author %> </div> 
 
-<p>
-  <b>Name:</b>
-  <%= @book.name %>
-</p>
+
+<br> Назва:
+   <div id= mn><%= @book.name %> </div>
 
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
 
-
-
-<p><br>
-  <b>Posts:</b> 
-  <% @book.posts.each do |post| %>
-  Post name: <%= link_to post.name, "/books/#{@book.id}/posts/#{post.id}" %> <br>
-  Post text: <%= link_to post.body, "/books/#{@book.id}/posts/#{post.id}" %> <br>
-    <% end %>
-
-
-
 <br>
-  <%= link_to "Create new post", new_book_post_path(@book) %> 
+<p>
+  <br><H4>Роздiли: </H4>
+  <%= link_to "Новий роздiл ", new_book_post_path(@book) %> 
+</p>
+  
+ <p> <% @book.posts.each do |post| %>
+   <p> <br> <H4> <b> <%= link_to post.name, "/books/#{@book.id}/posts/#{post.id}" %> </b> </H4> 
+         <%=link_to 'Show', "/books/#{@book.id}/posts/#{post.id}" %>
+       | <%=link_to 'Edit', edit_book_post_path(@book, post.id) %> 
+       | <%=link_to 'Destroy', book_post_path(@book, post.id), :method => :delete %> 
+   <br>
+        <%=post.body%> 
+   </p> 
+   <% end %>
+ </p>
+<br>
+
   <%#= render "posts/form" %>
 
