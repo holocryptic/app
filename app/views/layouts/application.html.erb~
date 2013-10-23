@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>App</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -10,7 +11,19 @@
 
 <%= yield %>
 
-<%= stylesheet_link_tag 'application', :media => "all" %>
+<script src="assets/wysihtml5-0.3.0.js"></script>
+<script src="assets/jquery-1.7.2.min.js"></script>
+<script src="assets/prettify.js"></script>
+<script src="assets/bootstrap.min.js"></script>
+<script src="assets/bootstrap-wysihtml5.js"></script>
 
+
+
+
+<script>
+$('.textarea').wysihtml5();
+
+	$(prettyPrint);
+</script>
 </body>
 </html>

@@ -1,15 +1,16 @@
 <!--div class="hero-unit" style="margin-top:40px"-->
-<h1>Listing books</h1>
+<h1>Список Книг</h1>
 
 <table>
 <% @books.each do |book| %>
  <tr>
-    <td id=mn><b><%= book.name %></b> 
-    (<%= book.author %>)
+    <td id=mn><b>
+    <%= sanitize book.name %></b> 
+    (<%= sanitize book.author %>)
     </td>
-   <td> <%= link_to 'Show', book %>
-    | <%= link_to 'Edit', edit_book_path(book) %>
-    | <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+   <td> <%= link_to 'Переглянути', book %>
+    | <%= link_to 'Редагувати', edit_book_path(book) %>
+    | <%= link_to 'Видалити', book, method: :delete, data: { confirm: 'Ви впевненi?' } %>
    </td> 
  </tr>
 <% end %>

@@ -14,8 +14,7 @@ gem 'sqlite3'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'twitter-bootstrap-rails'
-   gem "less-rails" 
+  gem "less-rails" 
   gem "libv8", "~> 3.11.8.17"
   gem "therubyracer", :require => 'v8' 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -27,6 +26,8 @@ end
 gem 'jquery-rails'
 
 gem 'pdfkit'
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap-wysihtml5-rails'
 
 #group :development, :test do
 #  gem 'pg', '0.17.0'

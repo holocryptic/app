@@ -1,9 +1,9 @@
-<h1>Listing posts</h1>
+<h1>Список Роздiлiв</h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Body</th>
+    <th>Назва</th>
+    <th>Вмiст</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,8 +14,8 @@
     <td><%= post.name %></td>
     <td><%= post.body %></td>
     <td><%= post.id %></td>
-    <td><%= link_to 'Show', book_post_path(@book, post) %></td>
-    <td><%= link_to 'Edit', edit_book_post_path(@book, post) %> </td>
+    <td><%= link_to 'Переглянути', book_post_path(@book, post) %></td>
+    <td><%= link_to 'Редагувати', edit_book_post_path(@book, post) %> </td>
     <td><%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
@@ -23,4 +23,4 @@
 
 <br />
 
-<%= link_to 'New Post', new_book_post_path(@book) %>
+<%= link_to 'Додати Роздiл', new_book_post_path(@book) %>

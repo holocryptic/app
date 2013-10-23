@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Назва:</b>
   <%= @post.name %>
 </p>
 
 <p>
-  <b>Body:</b>
+  <b>Вмiст:</b>
   <%= @post.body %>
 </p>
 
-<h2> Comments: </h2>
+<h2> Коментарi: </h2>
 <%= @post.comments.each do |comment| %>
   <p>
-    <b> Commenter:</b>
+    <b> Автор:</b>
     <%=comment.commentor %>
   </p>
 
   <p>
-    <b> Comment: </b>
+    <b> Коментар: </b>
     <%=comment.body %>
   </p>
  <% end %>
@@ -26,8 +26,8 @@
 
 
 
-<%= link_to 'Edit', edit_book_post_path(@book, @post)  %> 
-<%= link_to 'Back', book_path(@book) %>
+<%= link_to 'Редагувати', edit_book_post_path(@book, @post)  %> 
+<%= link_to 'Повернутись', book_path(@book) %>
 <%#= link_to 'Back', book_posts_path(@book) %>
 <%#= link_to 'Destroy', book_post(@book), method :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Destroy', "/books/#{@book.id}/posts/#{@post.id}", :method => :delete %>
+<%= link_to 'Видалити', "/books/#{@book.id}/posts/#{@post.id}", :method => :delete %>

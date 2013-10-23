@@ -3,6 +3,6 @@
 <%= render 'form' %>
 
 
-<%= link_to 'Show', "/books/#{@book.id}/posts/#{@post.id}" %> 
-<%= link_to 'Back', book_post_path(@book, @post) %>
-<%= link_to 'Destroy', "/books/#{@book.id}/posts/#{@post.id}", :method => :delete %>
+<%= link_to 'Переглянути', "/books/#{@book.id}/posts/#{@post.id}" %> 
+<%= link_to 'Повернутись', book_post_path(@book, @post) %>
+<%= link_to 'Видалити', "/books/#{@book.id}/posts/#{@post.id}", :method => :delete %>
