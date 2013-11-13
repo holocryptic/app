@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+
 <center>
 <br> Автор: 
  <div id= mn> <%= @book.author %> </div> 
@@ -25,8 +26,11 @@
        | <%=link_to 'Редагувати', edit_book_post_path(@book, post.id) %> 
        | <%=link_to 'Видалити', book_post_path(@book, post.id), :method => :delete %> 
    <br>
-        <%=sanitize post.body%> 
-   </p> 
+   <div class="hero-unit">
+        <%# Sanitize interprets html and escapes some tags. Raw and html_safe doesn't escape %>
+        <%=raw truncate(post.body, length: 500, separator: ' ')%> 
+   </p>
+   </div> 
    <% end %>
  </p>
 <br>

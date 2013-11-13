@@ -26,8 +26,12 @@ end
 gem 'jquery-rails'
 
 gem 'pdfkit'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'bootstrap-wysihtml5-rails'
+gem "ckeditor"
+gem "paperclip"
+gem 'fastercsv' # Only required on Ruby 1.8 and below
+gem 'rails_admin'
 
 #group :development, :test do
 #  gem 'pg', '0.17.0'
@@ -50,3 +54,6 @@ gem 'bootstrap-wysihtml5-rails'
 
 # To use debugger
 # gem 'debugger'
+
+
+gem "devise"

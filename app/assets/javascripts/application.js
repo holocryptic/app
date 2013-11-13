@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require bootstrap-wysihtml5
+//= require ckeditor/init
 //= require_tree .

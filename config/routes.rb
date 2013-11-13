@@ -1,10 +1,22 @@
 App::Application.routes.draw do
+
+  devise_for :admins
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  
+
+  mount Ckeditor::Engine => '/ckeditor'
+
  # resources :comments
  # resources :posts
  # resources :books
   # root to: "home#index"
 
 #Posts::Application.routes.draw do
+  
+  
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
 root to: "home#index"
 #resources :posts
 

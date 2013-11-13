@@ -7,8 +7,10 @@
 
 <p>
   <b>Вмiст:</b>
-  <%= @post.body %>
+  <div class="hero-unit">
+  <%=raw @post.body %>
 </p>
+</div>
 
 <h2> Коментарi: </h2>
 <%= @post.comments.each do |comment| %>
